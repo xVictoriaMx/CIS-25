@@ -4,6 +4,7 @@
 using namespace std;
 
 // Size and Range of data types
+
 int main() {
     cout << "Size of short: " << sizeof(short) << " byte" << endl;
     cout << "Range of short: " << SHRT_MIN << " to " << SHRT_MAX << endl;
