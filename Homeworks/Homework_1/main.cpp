@@ -13,7 +13,7 @@ int main() {
         return 0;
     }
 
-    std::string binary = "";  
+    string binary = "";  
 
     while (num > 0) {
         binary = (num % 2 == 0 ? "0" : "1") + binary; 
