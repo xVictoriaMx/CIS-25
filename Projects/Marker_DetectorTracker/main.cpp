@@ -61,7 +61,23 @@ Point getContours(Mat imgDilation) {
 
 // Figure out what color the marker is
 
-vector<vector<int>> findColor(Mat img);
+vector<vector<int>> findColor(Mat img) {
+	Mat imgHSV;
+	cvtColor(img, imgHSV, COLOR_BGR2HSV);
+
+	for (int i = 0; i < myColors.size(); i++) {
+		Scalar lower(colors[i][0], colors[i][1], colors[i][2]);
+		Scalar upper(colors[i][3], colors[i][4], colors[i][5]);
+		Mat mask;
+		inRange(imgHSV, lower, upper, mask);
+		Point fixedPoint = getContours(mask);
+
+		if (fixedPoint.x != 0 && fixedPoint.y != 0) {
+			upPoints.push_back({ fixedPoint.x, fixedPoint.y,i });
+		}
+	}
+	return upPoints;
+}
 
 // Display ink on Canvas
 
