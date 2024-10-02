@@ -65,7 +65,7 @@ vector<vector<int>> findColor(Mat img) {
 	Mat imgHSV;
 	cvtColor(img, imgHSV, COLOR_BGR2HSV);
 
-	for (int i = 0; i < myColors.size(); i++) {
+	for (int i = 0; i < colors.size(); i++) {
 		Scalar lower(colors[i][0], colors[i][1], colors[i][2]);
 		Scalar upper(colors[i][3], colors[i][4], colors[i][5]);
 		Mat mask;
@@ -81,7 +81,11 @@ vector<vector<int>> findColor(Mat img) {
 
 // Display ink on Canvas
 
-void drawOnCanvas();
+void drawOnCanvas(vector<vector<int>> upPoints, vector<Scalar> defaultColorVals ) {
+	for (int i = 0; i < upPoints.size(); i++) {
+		circle(img, (Point(upPoints[i][0], upPoints[i][1])), 10, defaultColorVals[upPoints[i][2]], FILLED);
+	}
+}
 
 int main() {
 	VideoCapture cap(0);
