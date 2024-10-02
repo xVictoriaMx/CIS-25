@@ -12,11 +12,11 @@ vector<vector<int>> upPoints;
 // Values for default colors
 
 vector<vector<int>> colors{
-	{0,109,0,91,255,255},
+	{0,154,0,179,255,255},
 	{68, 72, 156, 102, 126, 255}, 
 	{124, 48, 117, 143, 170, 255} };
 
-vector<Scalar> defaultColorVals{ {255,0,255}, {0,255,0}, {0, 0, 255} };
+vector<Scalar> defaultColorVals{ {0,0,255}, {0,255,0}, {255, 0, 255} };
 
 // Get outliine of Marker, as well as drawing point
 
