@@ -81,9 +81,14 @@ vector<vector<int>> findColor(Mat img) {
 
 // Display ink on Canvas
 
-void drawOnCanvas(vector<vector<int>> upPoints, vector<Scalar> defaultColorVals ) {
-	for (int i = 0; i < upPoints.size(); i++) {
-		circle(img, (Point(upPoints[i][0], upPoints[i][1])), 10, defaultColorVals[upPoints[i][2]], FILLED);
+void drawOnCanvas(vector<vector<int>> upPoints, vector<Scalar> defaultColorVals) {
+	for (int i = 1; i < upPoints.size(); i++) {
+		Point prevPoint(upPoints[i - 1][0], upPoints[i - 1][1]);
+		Point currPoint(upPoints[i][0], upPoints[i][1]);
+
+		if (upPoints[i][2] == upPoints[i - 1][2]) {
+			line(img, prevPoint, currPoint, defaultColorVals[upPoints[i][2]], 5);
+		}
 	}
 }
 
@@ -92,6 +97,8 @@ int main() {
 
 	while (true) {
 		cap.read(img);
+		flip(img, img, 1);
+
 		upPoints = findColor(img);
 		drawOnCanvas(upPoints, defaultColorVals);
 
