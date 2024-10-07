@@ -107,3 +107,50 @@ int main() {
 	}
 	return 0;
 }
+
+int main() {
+    int choice;
+    cout << "Choose an option: " << endl;
+    cout << "1: Use Webcam" << endl;
+    cout << "2: Use White Canvas" << endl;
+    cin >> choice;
+
+    if (choice == 1) {
+        // Option 1: Webcam
+        VideoCapture cap(0);
+
+        if (!cap.isOpened()) {
+            cout << "Error: Webcam not detected." << endl;
+            return -1;
+        }
+
+        while (true) {
+            cap.read(img);
+            flip(img, img, 1);  // Flip the image horizontally for a mirror view
+
+            newPoints = findColor(img);
+            drawOnCanvas(newPoints, myColorVals);
+
+            imshow("Image", img);
+            if (waitKey(1) == 27) break;  // Exit on 'ESC' key
+        }
+    }
+    else if (choice == 2) {
+        // Option 2: White Canvas
+        img = Mat::zeros(480, 640, CV_8UC3);  // Create a white canvas (480x640)
+        img.setTo(Scalar(255, 255, 255));     // Set the background to white
+
+        while (true) {
+            newPoints = findColor(img);        // Detect the points in the image
+            drawOnCanvas(newPoints, myColorVals);  // Draw on the white canvas
+
+            imshow("White Canvas", img);
+            if (waitKey(1) == 27) break;  // Exit on 'ESC' key
+        }
+    }
+    else {
+        cout << "Invalid choice!" << endl;
+    }
+
+    return 0;
+}
