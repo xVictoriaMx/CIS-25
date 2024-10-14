@@ -21,7 +21,7 @@ int main() {
     }
     cout << endl;
 
-    int sum = 0;
+    int sum = 0; 
     for (int j = 0; j < Arrsize; j++) {
         sum += arr[j];
     }
