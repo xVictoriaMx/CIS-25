@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "include/bubble_sort.hpp"
+#include "bubbleSort.hpp";
 
 int main() {
     const int SIZE = 5;
