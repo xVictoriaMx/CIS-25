@@ -3,23 +3,23 @@
 using namespace std;
 
 int main() {
-    int a = 5, b = 10;
+    int number1 = 5, number2 = 10;
 
-    int* p1;
-    int* p2;
+    int* pointer1;
+    int* pointer2;
 
-    p1 = &a; 
-    p2 = &b; 
+    pointer1 = &number1; 
+    pointer2 = &number2; 
 
     cout << "\nBefore." << endl;
-    cout << "a = " << a << ", b = " << b << endl;
+    cout << "First Number = " << number1 << ", Second Number = " << number2 << endl;
 
-    *p1 = *p1 + *p2; 
-    *p2 = *p1 - *p2; 
-    *p1 = *p1 - *p2; 
+    *pointer1 = *pointer1 + *pointer2; 
+    *pointer2 = *pointer1 - *pointer2; 
+    *pointer1 = *pointer1 - *pointer2; 
 
     cout << "\nAfter." << endl;
-    cout << "a = " << a << ", b = " << b << endl;
+    cout << "First Number = " << number1 << ", Second Number = " << number2 << endl;
 
     return 0;
 }
