@@ -1,5 +1,9 @@
 # Prerequisites
 *.d
+.vscode/
+.vs/
+bubblesort/
+build/
 
 # Compiled Object files
 *.slo
