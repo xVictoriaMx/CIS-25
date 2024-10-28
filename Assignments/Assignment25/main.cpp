@@ -1,7 +1,9 @@
 #include <iostream>
-#include "include/Customer.hpp"
+#include "header/Customer.hpp"
 
 using namespace std;
+using namespace CustomerAddress;
+using namespace CustomerDetails;
 
 int main() {
     Customer customer;
