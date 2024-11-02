@@ -1,11 +1,13 @@
-#include "Customer.hpp"
+#include "../header/Customer.hpp"
 #include <iostream>
 
 using namespace std;
 
-void Customer::display() const {
-    cout << "\nCustomer Details:" << endl;
-    cout << "ID: " << id << endl;
-    cout << "Name: " << name << endl;
-    cout << "Email: " << email << endl;
+namespace CustomerDetails {
+    void Customer::display() const {
+        cout << "\nCustomer Details:" << endl;
+        cout << "ID: " << id << endl;
+        cout << "Name: " << name << endl;
+        cout << "Email: " << email << endl;
+    }
 }

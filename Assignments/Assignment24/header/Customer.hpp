@@ -5,12 +5,14 @@
 
 using namespace std;
 
-struct Customer {
-    int id;
-    string name;
-    string email;
+namespace CustomerDetails {
+    struct Customer {
+        int id;
+        string name;
+        string email;
 
-    void display() const;
-};
+        void display() const;
+    };
+}
 
 #endif
