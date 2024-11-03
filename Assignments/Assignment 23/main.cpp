@@ -1,24 +1,10 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include "CustomerValidator.h"
 
 using namespace std;
-
-bool isValidCustomerNumber(const string& customerNumber) {
-    if (customerNumber.length() != 6) {
-        return false;
-    }
-    if (!isalpha(customerNumber[0]) || !isalpha(customerNumber[1])) {
-        return false;
-    }
-
-    for (int i = 2; i < 6; ++i) {
-        if (!isdigit(customerNumber[i])) {
-            return false;
-        }
-    }
-    return true;
-}
+using namespace CustomerValidation;
 
 int main() {
     string customerNumber;
