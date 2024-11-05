@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "include/NameUtils.hpp"
+#include "header/NameUtils.hpp"
 
 using namespace std;
 using namespace NameUtils;
