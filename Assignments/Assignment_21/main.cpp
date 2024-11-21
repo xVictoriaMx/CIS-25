@@ -1,22 +1,11 @@
 #include <iostream>
-#include <memory> 
+#include <memory>
+#include "fillArray.h"
+#include "sumArray.h"
 
-using namespace std;
-
-void fillArray(unique_ptr<int[]>& arr, int size) {
-    for (int i = 0; i < size; i++) {
-        cout << "Enter element " << i + 1 << ": ";
-        cin >> arr[i];
-    }
-}
-
-int sumArray(const unique_ptr<int[]>& arr, int size) {
-    int sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum += arr[i];
-    }
-    return sum;
-}
+using namespace std; 
+using namespace Fill;
+using namespace Sum;
 
 int main() {
     int Arrsize;
