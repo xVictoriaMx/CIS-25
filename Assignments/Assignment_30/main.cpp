@@ -1,36 +1,21 @@
 #include <iostream>
 #include <string>
+#include "TextBox.hpp"  
 
-using namespace std;
-
-class TextBox {
-private:
-    string value;
-
-public:
-    TextBox() : value("") {}
-
-    void setValue(const string& newValue) {
-        value = newValue;
-    }
-
-    string getValue() const {
-        return value;
-    }
-
-    void display() const {
-        cout << "TextBox value: " << value << endl;
-    }
-};
+using namepsace std; 
 
 int main() {
-    TextBox textBox;
+    TextBox textBox1;
     string userInput;
 
-    cout << "Enter text for the TextBox: ";
-    getline(cin, userInput); 
-    textBox.setValue(userInput); 
-    textBox.display();          
+    cout << "Enter text for the first TextBox: ";
+    getline(cin, userInput);
+    textBox1.setValue(userInput);
+    textBox1.display();
+
+    string initialText = "Hello There!";
+    TextBox textBox2(initialText);  
+    textBox2.display();  
 
     return 0;
 }
