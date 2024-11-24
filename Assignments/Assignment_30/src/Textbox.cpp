@@ -3,18 +3,20 @@
 
 using namespace std;
 
-TextBox::TextBox() : value("") {}
+namespace Textbox {
+    TextBox::TextBox() : value("") {}
 
-TextBox::TextBox(const string& initialValue) : value(initialValue) {}
+    TextBox::TextBox(const string& initialValue) : value(initialValue) {}
 
-void TextBox::setValue(const string& newValue) {
-    value = newValue;
-}
+    void TextBox::setValue(const string& newValue) {
+        value = newValue;
+    }
 
-string TextBox::getValue() const {
-    return value;
-}
+    string TextBox::getValue() const {
+        return value;
+    }
 
-void TextBox::display() const {
-    cout << "TextBox value: " << value << endl;
+    void TextBox::display() const {
+        cout << "TextBox value: " << value << endl;
+    }
 }

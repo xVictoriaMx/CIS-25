@@ -2,7 +2,8 @@
 #include <string>
 #include "TextBox.hpp"  
 
-using namespace std; 
+using namespace std;
+using namespace Textbox;
 
 int main() {
     TextBox textBox1;
@@ -14,8 +15,8 @@ int main() {
     textBox1.display();
 
     string initialText = "Hello There!";
-    TextBox textBox2(initialText);  
-    textBox2.display();  
+    TextBox textBox2(initialText);
+    textBox2.display();
 
     return 0;
 }

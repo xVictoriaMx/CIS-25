@@ -1,24 +1,26 @@
-#ifndef TEXTBOX_HPP
-#define TEXTBOX_HPP
+#ifndef TEXTBOX_H
+#define TEXTBOX_H
 
 #include <string>
 
 using namespace std;
 
-class TextBox {
-private:
-    string value;  
+namespace Textbox {
+    class TextBox {
+    private:
+        string value;
 
-public:
-    TextBox();
+    public:
+        TextBox();
 
-    explicit TextBox(const string& initialValue);
+        explicit TextBox(const string& initialValue);
 
-    void setValue(const string& newValue);
+        void setValue(const string& newValue);
 
-    string getValue() const;
+        string getValue() const;
 
-    void display() const;
-};
+        void display() const;
+    };
+}
 
 #endif  
