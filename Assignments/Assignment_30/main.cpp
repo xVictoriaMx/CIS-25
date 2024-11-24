@@ -2,7 +2,7 @@
 #include <string>
 #include "TextBox.hpp"  
 
-using namepsace std; 
+using namespace std; 
 
 int main() {
     TextBox textBox1;
